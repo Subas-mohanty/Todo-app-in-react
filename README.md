@@ -20,7 +20,7 @@ git clone https://github.com/Subas-mohanty/Todo-app-in-react.git
 ```
 2. Navigate to the project directory:
 ```
-cd react-todo-app
+cd Todo-app-in-react
 ```
 3. Install dependencies:
 ```
@@ -30,11 +30,11 @@ npm install
 ```
 npm run dev
 ```
-5. Open your web browser and go to http://localhost:3000/ to access the application.
+5. Open your web browser and go to http://localhost:5173/ to access the application.
 
 ## Usage
 - **Add Todo** : Enter a new todo in the input field and press Enter or click on the "Add" button.
-- **Modify Todo** : Double click on a todo to edit its content. Press Enter to save the changes.
+- **Modify Todo** : Click on the edit button to edit its content. Press the save button to save the changes.
 - **Mark as Completed** : Click on the checkbox next to a todo to mark it as completed.
 - **Delete Todo** : Click on the delete icon next to a todo to delete it from the list.
 
