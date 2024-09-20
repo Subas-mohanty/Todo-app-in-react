@@ -32,7 +32,7 @@ function App() {
 
   // we can do this thing inside the first useEffect as well but when our todos will change it will getItem from the local storage again and again and we don't want that so we are using another useEffect
   useEffect(()=>{
-    localStorage.setItem("key", JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos])
 
 
