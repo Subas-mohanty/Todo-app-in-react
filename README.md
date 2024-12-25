@@ -22,7 +22,7 @@ git clone https://github.com/Subas-mohanty/Todo-App-in-react
 ```
 2. Navigate to the project directory:
 ```
-cd Todo-App
+cd Todo-app-in-react
 ```
 3. Install dependencies:
 ```
