@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTodo } from "../contexts";
 import DateFormat from "./DateFormat";
 
@@ -6,9 +6,17 @@ function TodoItem({ todo, setTodoPriority }) {
 
   const [isTodoEditable, setIsTodoEditable] = useState(false);
   const [todoMsg, setTodoMsg] = useState(todo.todo);
+  const inputRef = useRef(null);
+
   let showDate = "hidden md:block";
 
   const {updateTodo, deleteTodo, toggleCompleted} = useTodo();
+
+  useEffect(() => {
+    if (isTodoEditable && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isTodoEditable]);
 
   function editTodo(){
     updateTodo(todo.id, {...todo, todo : todoMsg})
@@ -30,9 +38,10 @@ function TodoItem({ todo, setTodoPriority }) {
         onChange={toggle}
       />
       <input
+        ref={inputRef}
         type="text"
         className={`border outline-none w-full bg-transparent rounded-lg ${
-          isTodoEditable ? "border-black/10 px-2" : "border-transparent"
+          isTodoEditable ? "border-black/30 px-2" : "border-transparent"
         } ${todo.completed ? "line-through" : ""}`}
         value={todoMsg}
         onChange={(e) => setTodoMsg(e.target.value)}
@@ -54,7 +63,7 @@ function TodoItem({ todo, setTodoPriority }) {
         }}
         disabled={todo.completed}
       >
-        {isTodoEditable ? "📁" : "✏️"}
+        {isTodoEditable ? "✅" : "✏️"}
       </button>
 
         {/* Set Priority Button */}
