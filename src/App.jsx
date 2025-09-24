@@ -61,7 +61,7 @@ function App() {
 
   return (
     <TodoContextProvider value={{ todos, addTodo, updateTodo, deleteTodo, toggleCompleted, setTodoPriority}}>
-      <div className="bg-[rgb(23,40,66)] min-h-screen py-8">
+      <div className="bg-[rgb(23,40,66)] min-h-[100dvh] py-8">
         <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
           <h1 className="text-2xl font-bold text-center mb-8 mt-2">
             Manage Your Todos
